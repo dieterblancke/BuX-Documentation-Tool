@@ -34,6 +34,7 @@ public class Bootstrap {
         fileWriter.append("""
                 * ( argument ) stands for a required argument
                 * [ argument ] stands for an optional argument
+                * < argument > stands for a required argument based on a configuration variable
                                 
                 """);
 
@@ -78,7 +79,7 @@ public class Bootstrap {
                                                final Command command,
                                                final String headerPrefix,
                                                final String prefix) {
-        fileWriter.append(headerPrefix + command.getName());
+        fileWriter.append(headerPrefix + prefix + command.getName());
         fileWriter.append("\n\n");
         fileWriter.append("""
                 | Command | Default Aliases | Permission |
@@ -92,9 +93,14 @@ public class Bootstrap {
                 command.getPermission()
         ));
         fileWriter.append("\n");
-        fileWriter.append("**Usage: **" + command.getCommand().getUsage() + "\n");
-        fileWriter.append("**Description: **" + command.getCommand().getDescription() + "\n");
-        fileWriter.append("**Images**:" + getImageUrls(prefix + " " + command.getName()) + "\n");
+        fileWriter.append("**Usage:** " + command.getCommand().getUsage() + "\n\n");
+        fileWriter.append("**Description:** " + command.getCommand().getDescription() + "\n\n");
+
+        final String[] images = getImageUrls(prefix + " " + command.getName());
+
+        if (images.length > 0) {
+            fileWriter.append("**Images:** " + String.join("\n", images) + "\n");
+        }
     }
 
     private static String[] getImageUrls(final String command) {
