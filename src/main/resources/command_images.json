@@ -1,0 +1,120 @@
+{
+  "/announce": [
+    "https://i.imgur.com/tbDWLQs.png",
+    "https://i.imgur.com/owmvMA7.png",
+    "https://i.imgur.com/aN250KS.png"
+  ],
+  "/glag": [
+    "https://i.imgur.com/XNnxrqq.png"
+  ],
+  "/bhelpop": [
+    "https://i.imgur.com/YAxhwzb.png"
+  ],
+  "/glist": [
+    "https://i.imgur.com/A8HjCM3.png",
+    "https://i.imgur.com/mBoXqyY.png"
+  ],
+  "/report": [
+    "https://i.imgur.com/Yj3Hh7z.png"
+  ],
+  "/report list": [
+    "https://i.imgur.com/QfiOSoN.png",
+    "https://i.imgur.com/G1McUUc.png"
+  ],
+  "/report deny": [
+    "https://i.imgur.com/0FT1oo8.png"
+  ],
+  "/report create": [
+    "https://i.imgur.com/7ULcefN.png"
+  ],
+  "/report history": [
+    "https://i.imgur.com/xhVmfxv.png"
+  ],
+  "/chatlock": [
+    "https://i.imgur.com/hCoX27y.png"
+  ],
+  "/staffchat": [
+    "https://i.imgur.com/cFxsm2L.png"
+  ],
+  "/friends": [
+    "https://i.imgur.com/QIZxT2v.png",
+    "https://i.imgur.com/Fq4skEB.png"
+  ],
+  "/friends add": [
+    "https://i.imgur.com/RvtnG0o.png",
+    "https://i.imgur.com/UpClGJH.png"
+  ],
+  "/friends deny": [
+    "https://i.imgur.com/4mn5TLY.png",
+    "https://i.imgur.com/hz5CB2Q.png"
+  ],
+  "/friends removerequest": [
+    "https://i.imgur.com/kvf7tLF.png",
+    "https://i.imgur.com/qHREX5n.png"
+  ],
+  "/friends remove": [
+    "https://i.imgur.com/ZTlZlEN.png",
+    "https://i.imgur.com/wTtYthk.png"
+  ],
+  "/friends list": [
+    "https://i.imgur.com/MUKiy9p.png"
+  ],
+  "/friends settings": [
+    "https://i.imgur.com/jjUlGbb.png"
+  ],
+  "/friends requests": [
+    "https://i.imgur.com/aNGKILf.png",
+    "https://i.imgur.com/4j4pUke.png"
+  ],
+  "/ban": [
+    "https://i.imgur.com/Xh9CDWd.png",
+    "https://i.imgur.com/qpdlTAd.png"
+  ],
+  "/ipban": [
+    "https://i.imgur.com/QnBWURl.png"
+  ],
+  "/tempban": [
+    "https://i.imgur.com/OKqe23Q.png",
+    "https://i.imgur.com/AWui1nz.png"
+  ],
+  "/iptempban": [
+    "https://i.imgur.com/LFejfJE.png"
+  ],
+  "/mute": [
+    "https://i.imgur.com/5iT5Mun.png",
+    "https://i.imgur.com/nRJEXFk.png"
+  ],
+  "/ipmute": [
+    "https://i.imgur.com/YrMU7wO.png"
+  ],
+  "/tempmute": [
+    "https://i.imgur.com/JKe2UrJ.png",
+    "https://i.imgur.com/MyOUwXn.png"
+  ],
+  "/iptempmute": [
+    "https://i.imgur.com/Yd91BxV.png"
+  ],
+  "/kick": [
+    "https://i.imgur.com/NiTAjXg.png",
+    "https://i.imgur.com/ZQLk50n.png"
+  ],
+  "/warn": [
+    "https://i.imgur.com/4SXzSG4.png",
+    "https://i.imgur.com/d2faosi.png"
+  ],
+  "/punishmentinfo": [
+    "https://i.imgur.com/BUqYtSI.png"
+  ],
+  "/punishmenthistory": [
+    "https://i.imgur.com/QxMdfY0.png"
+  ],
+  "/punishmentdata": [
+    "https://i.imgur.com/TwjOTut.png"
+  ],
+  "/staffhistory": [
+    "https://i.imgur.com/ch3xmq8.png"
+  ],
+  "/staffrollback": [
+    "https://i.imgur.com/q5zheYO.png"
+  ]
+}

@@ -2,17 +2,30 @@ package be.dieterblancke.bungeeutilisalsx.documentation;
 
 import be.dieterblancke.bungeeutilisalsx.common.api.command.Command;
 import be.dieterblancke.bungeeutilisalsx.common.api.command.ParentCommand;
+import com.google.common.io.CharStreams;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Bootstrap {
 
+    private static JsonObject commandImages;
+
     @SneakyThrows
     public static void main(String[] args) {
+        commandImages = new Gson().fromJson(CharStreams.toString(
+                new InputStreamReader(Bootstrap.class.getResourceAsStream("/command_images.json"))
+        ), JsonObject.class);
+
         final BungeeUtilisalsX bungeeUtilisalsX = new BungeeUtilisalsX();
         bungeeUtilisalsX.initialize();
         final CommandManager commandManager = (CommandManager) bungeeUtilisalsX.getCommandManager();
@@ -30,6 +43,10 @@ public class Bootstrap {
         fileWriter.append("""
                                 
                 All commands in this list can be enabled / disabled or changed. Each (sub)command name, alias, permission, ... can be changed to your liking.
+                Each message can also be changed as you please!
+                                
+                The most obvious commands don't have screenshots included in order to limit the amount of images,
+                you can also test everything on my test server: test.dieterblancke.xyz!
                 """);
         fileWriter.append("""
                 * ( argument ) stands for a required argument
@@ -37,6 +54,10 @@ public class Bootstrap {
                 * < argument > stands for a required argument based on a configuration variable
                                 
                 """);
+
+        fileWriter.append("## Table of Contents\n");
+        fileWriter.append(createTableOfContents(commandManager.getCommands(), "/"));
+        fileWriter.append("\n");
 
         for (Command command : commandManager.getCommands()) {
             printCommandAsMarkdown(
@@ -96,20 +117,43 @@ public class Bootstrap {
         fileWriter.append("**Usage:** " + command.getCommand().getUsage() + "\n\n");
         fileWriter.append("**Description:** " + command.getCommand().getDescription() + "\n\n");
 
-        final String[] images = getImageUrls(prefix + " " + command.getName());
+        final String images = getImageUrls(prefix + command.getName());
 
-        if (images.length > 0) {
-            fileWriter.append("**Images:** " + String.join("\n", images) + "\n");
+        if (!images.isEmpty()) {
+            fileWriter.append("**Images:** \n\n" + images + "\n\n");
         }
     }
 
-    private static String[] getImageUrls(final String command) {
-        final String[] urls = switch (command.toLowerCase()) {
-            default -> new String[0];
-        };
+    private static String getImageUrls(final String command) {
+        if (!commandImages.has(command)) {
+            return "";
+        }
+        final StringBuilder builder = new StringBuilder("<div class=\"imagelist\">\n");
+        final JsonArray images = commandImages.getAsJsonArray(command);
 
-        return Arrays.stream(urls)
-                .map(url -> "![" + command + " images](" + url + ")")
-                .toArray(String[]::new);
+        for (JsonElement el : images) {
+            builder.append("\t<img src=\"")
+                    .append(el.getAsString())
+                    .append("\" alt=\"")
+                    .append(command)
+                    .append(" images\"/>\n");
+        }
+
+        builder.append("</div>");
+
+        return builder.toString();
+    }
+
+    private static String createTableOfContents(final List<Command> commands, final String prefix) {
+        final StringBuilder builder = new StringBuilder();
+
+        for (Command command : commands) {
+            builder.append("- [" + prefix + command.getName() + "](#" + prefix.substring(1).replace(" ", "-") + command.getName() + ")\n");
+
+            if (command.getCommand() instanceof ParentCommand) {
+                builder.append(createTableOfContents(((ParentCommand) command.getCommand()).getSubCommands(), prefix + command.getName() + " "));
+            }
+        }
+        return builder.toString();
     }
 }
