@@ -140,4 +140,9 @@ public class BungeeUtilisalsX extends AbstractBungeeUtilisalsX {
     protected void registerMetrics() {
 
     }
+
+    @Override
+    public boolean isProtocolizeEnabled() {
+        return true;
+    }
 }
