@@ -116,5 +116,61 @@
   ],
   "/staffrollback": [
     "https://i.imgur.com/q5zheYO.png"
+  ],
+  "/party": [
+    "https://i.imgur.com/OAJphyK.png",
+    "https://i.imgur.com/ujwwBvA.png",
+    "https://i.imgur.com/ej1Stkk.png",
+    "https://i.imgur.com/o5ooNOm.png",
+    "https://i.imgur.com/bViNz8e.png",
+    "https://i.imgur.com/EcnDQJ4.png",
+    "https://i.imgur.com/hKyOH1G.png"
+  ],
+  "/party help": [
+    "https://i.imgur.com/KBzmNcr.png"
+  ],
+  "/party create": [
+    "https://i.imgur.com/mhCdwLF.png"
+  ],
+  "/party invite": [
+    "https://i.imgur.com/tVm5nnW.png",
+    "https://i.imgur.com/hjhE72y.png"
+  ],
+  "/party accept": [
+    "https://i.imgur.com/ZfnYcv7.png",
+    "https://i.imgur.com/2SKBtDf.png"
+  ],
+  "/party leave": [
+    "https://i.imgur.com/QG1B0sc.png",
+    "https://i.imgur.com/ArKod08.png"
+  ],
+  "/party chat": [
+    "https://i.imgur.com/o79mBKC.png"
+  ],
+  "/party setowner": [
+    "https://i.imgur.com/SlR9W0O.png"
+  ],
+  "/party kick": [
+    "https://i.imgur.com/a2HeVfX.png",
+    "https://i.imgur.com/f9BgEgD.png",
+    "https://i.imgur.com/IaY8Kex.png"
+  ],
+  "/party warp": [
+    "https://i.imgur.com/5TI2n5B.png",
+    "https://i.imgur.com/PvMSQzd.png",
+    "https://i.imgur.com/v59Xamv.png"
+  ],
+  "/party list": [
+    "https://i.imgur.com/flRb6Lf.png"
+  ],
+  "/party setrole": [
+    "https://i.imgur.com/vPskkS5.png"
+  ],
+  "/party info": [
+    "https://i.imgur.com/z8sJBSr.png"
+  ],
+  "/party disband": [
+    "https://i.imgur.com/bnYd101.png",
+    "https://i.imgur.com/W8MN0yn.png"
   ]
 }

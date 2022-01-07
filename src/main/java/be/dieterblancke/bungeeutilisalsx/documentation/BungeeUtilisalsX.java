@@ -5,10 +5,11 @@ import be.dieterblancke.bungeeutilisalsx.common.IBuXApi;
 import be.dieterblancke.bungeeutilisalsx.common.IPluginDescription;
 import be.dieterblancke.bungeeutilisalsx.common.ProxyOperationsApi;
 import be.dieterblancke.bungeeutilisalsx.common.api.command.Command;
-import be.dieterblancke.bungeeutilisalsx.common.api.utils.dump.PluginInfo;
 import be.dieterblancke.bungeeutilisalsx.common.api.utils.other.IProxyServer;
+import be.dieterblancke.bungeeutilisalsx.common.api.utils.other.PluginInfo;
 import be.dieterblancke.bungeeutilisalsx.common.api.utils.other.StaffUser;
 import be.dieterblancke.bungeeutilisalsx.common.commands.CommandManager;
+import net.md_5.bungee.api.chat.BaseComponent;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -91,6 +92,16 @@ public class BungeeUtilisalsX extends AbstractBungeeUtilisalsX {
             @Override
             public Optional<PluginInfo> getPlugin(String s) {
                 return Optional.empty();
+            }
+
+            @Override
+            public long getMaxPlayers() {
+                return 0;
+            }
+
+            @Override
+            public Object getMessageComponent(BaseComponent... baseComponents) {
+                return null;
             }
         };
     }
